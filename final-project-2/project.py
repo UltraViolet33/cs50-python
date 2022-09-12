@@ -3,16 +3,19 @@ import sys
 
 
 def main():
-    # user_choice = display_menu()
+    user_choice = display_menu()
     print(display_menu())
     
     # get the user choice
     user_choice = get_user_choice()
     print(user_choice)
+    menu(user_choice)
+    
+    # ex = Expense(1, "test")
+    # ex.get_expenses_from_file()
+    
             
     
-
-
 
 def display_menu() -> str:
     menu = "-------- EXPENSES MANAGER -------- \n"
@@ -36,6 +39,13 @@ def get_user_choice():
             return user_choice
         except ValueError:
             print("Please type 1 or 2 or 3")
+            
+            
+
+def menu(user_choice):
+    if user_choice == 1:
+        Expense.get()
+        
 
 
 if __name__ == "__main__":

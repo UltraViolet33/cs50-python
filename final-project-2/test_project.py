@@ -1,5 +1,7 @@
 import project
 import pytest
+import mock
+from unittest.mock import patch
 
 
 def test_display_menu():
@@ -12,13 +14,14 @@ def test_display_menu():
     
     assert project.display_menu() == menu_str
     
+
     
-def test_get_user_choice(monkeypatch):
-    # # project.input = lambda: "test"
-    # monkeypatch.setattr('builtins.input', lambda _: "Mark")
-    # assert project.get_user_choice() == 1
+@patch('builtins.input', return_value=1)   
+def test_get_user_choice(mock_input):
+    assert project.get_user_choice() == 1
     
     
+
 def test_system_exit():
     with pytest.raises(SystemExit):
         project.exit_program()

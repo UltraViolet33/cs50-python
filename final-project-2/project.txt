@@ -56,14 +56,19 @@ an expense:
 
 
 
-- Sprint 1
+- Sprint 1 : DONE
     - display the menu
     - input data to create an expense
     - save data in csv
 
 
 - Sprint 2
+    - add several expenses
     - display all expenses in a table
     - display one expense
+
+
+- Sprint 3
     - update an expense
+    - Delete an expene
     
