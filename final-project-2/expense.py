@@ -1,5 +1,7 @@
+from cmath import exp
 import csv
 import datetime
+from tarfile import HeaderError
 from tabulate import tabulate
 
 
@@ -53,6 +55,45 @@ class Expense():
         all_expenses = self.get_expenses_from_file(self)
         print(all_expenses)
         print(tabulate(all_expenses, headers="keys", tablefmt="grid"))
+
+    @classmethod
+    def read_single_expense(self, id_expense):
+        expense = self.get_single_expense(id_expense)
+
+        list_single_expense = [expense]
+        print(tabulate(list_single_expense, headers="keys", tablefmt="grid"))
+
+        return expense
+
+    @classmethod
+    def get_single_expense(self, id_expense):
+        expense = {}
+        id_expense = str(id_expense)
+        all_expenses = self.get_expenses_from_file(self)
+        for item in all_expenses:
+            if item['id'] == id_expense:
+                expense = item
+
+        return expense
+
+    @classmethod
+    def delete_expense(self, id_expense):
+        id_expense = str(id_expense)
+        all_expenses = self.get_expenses_from_file(self)
+        for item in all_expenses:
+            if item['id'] == id_expense:
+                all_expenses.remove(item)
+
+        self.write_expense_to_file(all_expenses)
+
+    @classmethod
+    def write_expense_to_file(self, expenses):
+        header = ["id", "kind", "amount", "date"]
+
+        with open("expenses.csv", "w") as f:
+            writer = csv.DictWriter(f, fieldnames=header)
+            writer.writeheader()
+            writer.writerows(expenses)
 
     def save_expense(self):
         expense = self.to_dict()
