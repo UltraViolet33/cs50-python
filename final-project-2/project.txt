@@ -1,0 +1,69 @@
+- expenses manager
+
+- files
+    - project.py
+    - test_project.py
+    - class expense.py
+    - test_expense.py
+
+
+- librairies
+    - tablulate
+
+
+- add a expense
+- read expenses
+- update expense
+- delete expense
+- save data in the csv file
+- get data from the csv file
+
+
+- total number expense
+- total amount expense
+- total number expense for a specific kind
+- total amount expense for a specific kind
+- biggest expense
+- smallest expense
+
+
+an expense:
+    - amount
+    - date
+    - expense kind 
+
+
+
+- todos:
+- main():
+    display_menu()
+    - add a expense
+    - display expenses
+
+
+    - display_menu()
+    - get_all_data()
+    - delete_data()
+    - display_all_data()
+
+
+- class expenses.py
+
+    - name
+    - kind
+    - date
+    - amount
+
+
+
+- Sprint 1
+    - display the menu
+    - input data to create an expense
+    - save data in csv
+
+
+- Sprint 2
+    - display all expenses in a table
+    - display one expense
+    - update an expense
+    
