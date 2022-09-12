@@ -1,6 +1,6 @@
 import csv
 import datetime
-from multiprocessing.forkserver import read_signed
+from tabulate import tabulate
 
 
 class Expense():
@@ -12,7 +12,7 @@ class Expense():
         self.save_expense()
 
     def __str__(self):
-        return f"amount: {self.amount}, kind: {self.kind}, date {self.date}"
+        return f"amount: {self.amount}, kind: {self.kind}, date: {self.date}"
 
     @property
     def amount(self):
@@ -48,6 +48,12 @@ class Expense():
             except ValueError:
                 print("A positive integer")
 
+    @classmethod
+    def read_all_expenses(self):
+        all_expenses = self.get_expenses_from_file(self)
+        print(all_expenses)
+        print(tabulate(all_expenses, headers="keys", tablefmt="grid"))
+
     def save_expense(self):
         expense = self.to_dict()
         self.save_expenses_to_file(expense)
@@ -65,8 +71,15 @@ class Expense():
         return all_expenses
 
     def save_expenses_to_file(self, expense):
-        header = ["kind", "amount", "date"]
+        header = ["id", "kind", "amount", "date"]
         all_expenses = self.get_expenses_from_file()
+        if len(all_expenses) == 0:
+            id = 1
+        else:
+            id = int(all_expenses[len(all_expenses) - 1]['id']) + 1
+
+        print(id)
+        expense['id'] = id
         all_expenses.append(expense)
 
         with open("expenses.csv", "w") as f:

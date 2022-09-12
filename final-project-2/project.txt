@@ -61,6 +61,7 @@ an expense:
     - input data to create an expense
     - save data in csv
 
+main menu and sub menus
 
 - Sprint 2
     - add several expenses
@@ -69,6 +70,11 @@ an expense:
 
 
 - Sprint 3
-    - update an expense
     - Delete an expene
+    - see total expenses
+    - see total expense for the month
+
+
+- Sprint 4:
+    - update an expense
     

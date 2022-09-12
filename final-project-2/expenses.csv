@@ -1,2 +1,4 @@
-kind,amount,date
-test,10,2022-09-12
+id,kind,amount,date
+1,test,50,2022-09-12
+2,test2,10,2022-09-12
+3,tyesdf,10,2022-09-12
