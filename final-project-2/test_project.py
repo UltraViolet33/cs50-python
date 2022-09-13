@@ -4,13 +4,16 @@ from unittest.mock import patch
 
 
 def test_display_menu():
-    menu_str = "-------- EXPENSES MANAGER -------- \n"
-    menu_str += "-------- MENU -------- \n"
-    menu_str += "1 - Add an expense \n"
-    menu_str += "2 - See all expenses \n"
-    menu_str += "3 - Exit program \n"
+    main_menu: str = "---------- EXPENSES MANAGER ---------- \n ---------- MAIN MENU ---------- \n 1 - Add an expense \n 2 - See all expenses \n 3 - Exit program \n"
+    menu_all_expenses: str = "---------- EXPENSES MANAGER ---------- \n ---------- MENU ALL EXPENSES ---------- \n 1 - See a particular expense \n 2 - Back to main menu \n 3 - Exit program \n"
+    menu_single_expense: str = "---------- EXPENSES MANAGER ---------- \n ---------- MENU SINGLE EXPENSE ---------- \n 1 - Back to main menu \n 2 - Delete this expense \n 3 - Exit program \n"
 
-    assert project.display_menu() == menu_str
+    assert project.display_menu("main_menu") == main_menu
+    assert project.display_menu("menu_all_expenses") == menu_all_expenses
+    assert project.display_menu("menu_single_expense") == menu_single_expense
+
+    with pytest.raises(ValueError):
+        project.display_menu("invalid menu")
 
 
 @patch('builtins.input', return_value=1)
@@ -26,12 +29,6 @@ def test_get_user_choice_2(mock_input):
 @patch('builtins.input', return_value=3)
 def test_get_user_choice_3(mock_input):
     assert project.get_user_choice() == 3
-
-
-@patch('builtins.input', return_value=4)
-def test_get_user_choice_4(mock_input):
-    with pytest.raises(ValueError):
-        project.get_user_choice()
 
 
 def test_system_exit():

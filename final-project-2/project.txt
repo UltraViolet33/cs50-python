@@ -1,24 +1,5 @@
 - expenses manager
 
-- files
-    - project.py
-    - test_project.py
-    - class expense.py
-    - test_expense.py
-
-
-- librairies
-    - tablulate
-
-
-- add a expense
-- read expenses
-- update expense
-- delete expense
-- save data in the csv file
-- get data from the csv file
-
-
 - total number expense
 - total amount expense
 - total number expense for a specific kind
@@ -27,54 +8,21 @@
 - smallest expense
 
 
-an expense:
-    - amount
-    - date
-    - expense kind 
 
 
+Sprint 3:
+    - factoriser les méthodes pour afficher les menus dans project.py
+    - utiliser mypy pour les méthodes
+    - docstring pour les méthodes
+    - tester
 
-- todos:
-- main():
-    display_menu()
-    - add a expense
-    - display expenses
+Sprint 4:
+    - factoriser le code
+    - utiliser mypy
+    - docstring pour les méthodes
+    - tester avec unittest
 
-
-    - display_menu()
-    - get_all_data()
-    - delete_data()
-    - display_all_data()
-
-
-- class expenses.py
-
-    - name
-    - kind
-    - date
-    - amount
-
-
-
-- Sprint 1 : DONE
-    - display the menu
-    - input data to create an expense
-    - save data in csv
-
-main menu and sub menus
-
-- Sprint 2
-    - add several expenses
-    - display all expenses in a table
-    - display one expense
-
-
-- Sprint 3
-    - Delete an expene
+- Sprint 5
     - see total expenses
     - see total expense for the month
 
-
-- Sprint 4:
-    - update an expense
-    

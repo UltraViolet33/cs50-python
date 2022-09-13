@@ -1,9 +1,6 @@
-from cmath import exp
 import csv
 import datetime
-from tarfile import HeaderError
 from tabulate import tabulate
-
 
 class Expense():
 
@@ -59,10 +56,8 @@ class Expense():
     @classmethod
     def read_single_expense(self, id_expense):
         expense = self.get_single_expense(id_expense)
-
         list_single_expense = [expense]
         print(tabulate(list_single_expense, headers="keys", tablefmt="grid"))
-
         return expense
 
     @classmethod
@@ -73,7 +68,6 @@ class Expense():
         for item in all_expenses:
             if item['id'] == id_expense:
                 expense = item
-
         return expense
 
     @classmethod
@@ -83,7 +77,6 @@ class Expense():
         for item in all_expenses:
             if item['id'] == id_expense:
                 all_expenses.remove(item)
-
         self.write_expense_to_file(all_expenses)
 
     @classmethod
@@ -119,7 +112,6 @@ class Expense():
         else:
             id = int(all_expenses[len(all_expenses) - 1]['id']) + 1
 
-        print(id)
         expense['id'] = id
         all_expenses.append(expense)
 
