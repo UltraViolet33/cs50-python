@@ -88,6 +88,8 @@ def menu_single_expense(user_choice: int,
         main()
     else:
         exit_program()
+        
+        
 
 
 if __name__ == "__main__":

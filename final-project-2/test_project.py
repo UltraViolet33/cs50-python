@@ -34,3 +34,30 @@ def test_get_user_choice_3(mock_input):
 def test_system_exit():
     with pytest.raises(SystemExit):
         project.exit_program()
+
+
+@patch('expense.Expense.get')
+def test_main_menu(mock_get):
+    project.main_menu(1)
+    mock_get.assert_called_once()
+
+    with pytest.raises(SystemExit):
+        project.main_menu(3)
+
+
+@patch("project.main")
+def test_menu_all_expenses(mock_main):
+    project.menu_all_expenses(2)
+    mock_main.assert_called_once()
+
+    with pytest.raises(SystemExit):
+        project.menu_all_expenses(3)
+
+
+@patch("project.main")
+def test_menu_single_expense(mock_main):
+    project.menu_single_expense(1)
+    mock_main.assert_called_once()
+
+    with pytest.raises(SystemExit):
+        project.menu_single_expense(3)

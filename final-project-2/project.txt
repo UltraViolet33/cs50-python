@@ -10,7 +10,7 @@
 
 
 
-Sprint 3:
+Sprint 3: DONE
     - factoriser les méthodes pour afficher les menus dans project.py
     - utiliser mypy pour les méthodes
     - docstring pour les méthodes
