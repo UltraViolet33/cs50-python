@@ -9,22 +9,8 @@
 
 
 
-
-Sprint 3: DONE
-    - factoriser les méthodes pour afficher les menus dans project.py
-    - utiliser mypy pour les méthodes
-    - docstring pour les méthodes
-    - tester
-
-Sprint 4:
-    - factoriser le code
-    - utiliser mypy
-    - docstring pour les méthodes
-    - tester avec unittest
-
-    id expense ==  this expense does not exost
-
 - Sprint 5
     - see total expenses
     - see total expense for the month
+    - see the bigget amount kind
 

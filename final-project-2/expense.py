@@ -47,6 +47,16 @@ class Expense():
                 return cls(amount, kind)
             except ValueError:
                 print("A positive integer")
+                
+                
+    def see_total_expenses_amount(self):
+        expenses = self.get_expenses_from_file()
+        total_amount = 0
+        for item in expenses:
+            total_amount += item.amount
+        
+        return total
+            
 
     @classmethod
     def read_all_expenses(self):

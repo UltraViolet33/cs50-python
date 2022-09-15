@@ -1,6 +1,6 @@
 import datetime
 import unittest
-from expenses.expense import Expense
+from expense import Expense
 
 
 class TestExpense(unittest.TestCase):

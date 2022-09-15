@@ -1,5 +1,5 @@
 from dis import dis
-from expenses.expense import Expense
+from expense import Expense
 from typing import Union
 import sys
 
