@@ -22,6 +22,8 @@ Sprint 4:
     - docstring pour les méthodes
     - tester avec unittest
 
+    id expense ==  this expense does not exost
+
 - Sprint 5
     - see total expenses
     - see total expense for the month

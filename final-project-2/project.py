@@ -1,4 +1,5 @@
-from expense import Expense
+from dis import dis
+from expenses.expense import Expense
 from typing import Union
 import sys
 
@@ -50,6 +51,7 @@ def main_menu(user_choice: int) -> None:
     """Call the action from the user choice in the main menu"""
     if user_choice == 1:
         Expense.get()
+        main()
     elif user_choice == 2:
         Expense.read_all_expenses()
         print(display_menu("menu_all_expenses"))
@@ -84,12 +86,24 @@ def menu_single_expense(user_choice: int,
     if user_choice == 1:
         main()
     elif user_choice == 2:
-        Expense.delete_expense(id_expense)
-        main()
+        while True:
+            try:
+                confirm: int = int(
+                    input("Are you sure you want to delete this expense ?"))
+                break
+            except ValueError():
+                print("Please, choose 1 to delete or 0 to cancel")
+
+        if confirm == 1:
+            Expense.delete_expense(id_expense)
+            main()
+        else:
+            print(display_menu("menu_single_expense"))
+            user_choice_single_expense_menu: int = get_user_choice()
+            menu_single_expense(user_choice_single_expense_menu, id_expense)
+
     else:
         exit_program()
-        
-        
 
 
 if __name__ == "__main__":
